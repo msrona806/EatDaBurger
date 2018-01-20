@@ -7,7 +7,7 @@ var path = require("path");
 //_____________________________________________
 
 // code needed to connect to database. Reads connection file to get login data for mysql.
-require("./config/connection.js")
+var connection = require("./config/connection.js")
 
 // express setup
 var app = express();
@@ -28,17 +28,20 @@ app.set("view engine", "handlebars");
 
 //__________ROUTES____________
 app.get("/", function(req, res) {
-  res.render("index");
+  connection.query("SELECT * FROM burgers", function(request, response) {
+    res.render("index", {burgers: response});
+  })
+  
 });
 // taking info in from form
-app.post("/newBurger", function(req, rest) {
-  console.log("it works so far!!")
+app.post("/newBurger", function(req, res) {
+  console.log("button works so far!!");
   // take info from form to add into database
-//   connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [req.body.newBurger], function(err, res) {
-//     if (err) {
-
-//     }
-//   })
+  connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [req.body.newBurger], function(err, response) {
+    if (err) throw err; 
+    // sends user back to homepage after button is clicked
+    res.redirect("/");
+  })
   
 })
 

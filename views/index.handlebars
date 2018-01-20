@@ -3,3 +3,24 @@
   <input type="text" name="newBurger" value="flavor">
   <input type="submit" value="New Burger">
 </form> 
+
+<h2>Burgers to eat</h2>
+<ul>
+{{#each burgers}}
+{{#unless devoured}}
+
+<li>{{burger_name}}</li>
+{{/unless}}
+{{/each}}
+</ul>
+
+
+<h2>Burgers eaten</h2>
+<ul>
+{{#each burgers}}
+{{#if devoured}}
+
+<li>{{burger_name}}</li>
+{{/if}}
+{{/each}}
+</ul>
