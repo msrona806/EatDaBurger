@@ -1,0 +1,26 @@
+{
+  "name": "eatdaburger",
+  "version": "1.0.0",
+  "description": "burger app",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msrona806/EatDaBurger.git"
+  },
+  "author": "Sharona Young",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/msrona806/EatDaBurger/issues"
+  },
+  "homepage": "https://github.com/msrona806/EatDaBurger#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7"
+  }
+}
