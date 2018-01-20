@@ -9,7 +9,14 @@
 {{#each burgers}}
 {{#unless devoured}}
 
-<li>{{burger_name}}</li>
+
+<li>{{burger_name}} 
+ <form action = "/devourBurger" method="post"> 
+ <input type = "hidden" name = "burgerId" value = "{{id}}">
+ <button type="button">Devour</button>
+ </form>
+  
+</li>
 {{/unless}}
 {{/each}}
 </ul>

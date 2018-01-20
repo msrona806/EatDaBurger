@@ -41,10 +41,14 @@ app.post("/newBurger", function(req, res) {
     if (err) throw err; 
     // sends user back to homepage after button is clicked
     res.redirect("/");
-  })
-  
-})
-
+  });
+});
+//
+app.post("/devourBurger", function(req, res) {
+  connection.query("UPDATE burgers SET devoured = 1 WHERE id = ?", [req.body.id], function(err, response) {
+    res.redirect("/");
+  });
+});
 // Listener to connect to server
 app.listen(port, function() {
   console.log("listening on port ", port);
