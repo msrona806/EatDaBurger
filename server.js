@@ -35,7 +35,7 @@ app.get("/", function(req, res) {
 });
 // taking info in from form
 app.post("/newBurger", function(req, res) {
-  console.log("button works so far!!");
+  console.log("New Burger button works so far!!");
   // take info from form to add into database
   connection.query("INSERT INTO burgers (burger_name) VALUES (?)", [req.body.newBurger], function(err, response) {
     if (err) throw err; 
@@ -45,7 +45,8 @@ app.post("/newBurger", function(req, res) {
 });
 //
 app.post("/devourBurger", function(req, res) {
-  connection.query("UPDATE burgers SET devoured = 1 WHERE id = ?", [req.body.id], function(err, response) {
+  console.log("Devour button works");
+  connection.query("UPDATE burgers SET devoured = 1 WHERE id = ?", [req.body.burgerId], function(err, response) {
     res.redirect("/");
   });
 });
