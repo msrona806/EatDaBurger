@@ -5,19 +5,19 @@
 </form> 
 
 <h2>Burgers to eat</h2>
-<ul>
-  <div id="eat"> 
+ <div id="eat">
+ <ul>  
   {{#each burgers}}
   {{#unless devoured}}
  
 <li>{{burger_name}}  
-</div>
+
  <form action = "/devourBurger" method="post"> 
  <input type = "hidden" name = "burgerId" value = "{{id}}">
  <button type="submit">Devour</button>
  </form>
   
-</li>
+</li></div>
 {{/unless}}
 {{/each}}
 </ul>
