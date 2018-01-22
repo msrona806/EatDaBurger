@@ -1,16 +1,17 @@
 <form action="/newBurger" method="post"> {{! you have say what method you are using to get data. (refers to app.post)}}
-  New Buger:
-  <input type="text" name="newBurger" value="flavor">
+ <h3> New Burger:</h3>
+  <input type="text" name="newBurger" value="enter flavor">
   <input type="submit" value="New Burger">
 </form> 
 
 <h2>Burgers to eat</h2>
 <ul>
-{{#each burgers}}
-{{#unless devoured}}
-
-
-<li>{{burger_name}} 
+  <div id="eat"> 
+  {{#each burgers}}
+  {{#unless devoured}}
+ 
+<li>{{burger_name}}  
+</div>
  <form action = "/devourBurger" method="post"> 
  <input type = "hidden" name = "burgerId" value = "{{id}}">
  <button type="submit">Devour</button>
@@ -23,7 +24,7 @@
 
 
 <h2>Burgers eaten</h2>
-<ul>
+<ul id="eaten">
 {{#each burgers}}
 {{#if devoured}}
 
@@ -36,4 +37,15 @@
   h2 {
     background-color: pink;
   }
+ #eaten {
+   font-size: 28px;
+   color: green;
+ }
+ #eat {
+   font-size: 28px;
+   color: yellow;
+ }
+ h3 {
+   color: white;
+ }
 </style>
