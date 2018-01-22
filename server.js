@@ -29,9 +29,10 @@ app.set("view engine", "handlebars");
 
 //__________ROUTES____________
 app.get("/", function(req, res) {
-  connection.query("SELECT * FROM burgers", function(request, response) {
-    res.render("index", {burgers: response});
-  })
+  // connection.query("SELECT * FROM burgers", function(request, response) {
+    // res.render("index", {burgers: response});
+  // })
+  res.send("hello World");
   
 });
 // taking info in from form

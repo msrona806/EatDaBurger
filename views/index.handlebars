@@ -14,13 +14,13 @@
 
  <form action = "/devourBurger" method="post"> 
  <input type = "hidden" name = "burgerId" value = "{{id}}">
- <button type="submit">Devour</button>
+ <button id = "devour" type="submit">Devour</button>
  </form>
   
-</li></div>
+</li>
 {{/unless}}
 {{/each}}
-</ul>
+</ul></div>
 
 
 <h2>Burgers eaten</h2>
@@ -47,5 +47,8 @@
  }
  h3 {
    color: white;
+ }
+ #devour {
+   color: black;
  }
 </style>
