@@ -12,7 +12,7 @@ var connection = require("./config/connection.js")
 
 // express setup
 var app = express();
-var port = process.env.port || 8000;
+var PORT = process.env.PORT || 8000;
 
 // Parse data coming in, JSON. Makes info pretty
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -53,8 +53,8 @@ app.post("/devourBurger", function(req, res) {
   });
 });
 // Listener to connect to server
-app.listen(port, function() {
-  console.log("listening on port ", port);
+app.listen(PORT, function() {
+  console.log("listening on port ", PORT);
 });
 
 
